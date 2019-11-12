@@ -1,0 +1,27 @@
+.ticketsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.ticketContainer {
+    border: 1px solid black;
+    padding: 30px;
+    width: 60%;
+    margin: 30px auto;
+    /* float: left; */
+}
+
+.total {
+    text-align: center;
+}
+
+.derecha {
+    float: right;
+    /* padding-left: 10px; */
+}
+
+@media only screen and (max-width: 768px) {
+    .ticketsGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

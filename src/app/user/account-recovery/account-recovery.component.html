@@ -1,0 +1,9 @@
+<div class="container">
+<form #recoveryForm="ngForm" (ngSubmit)="onSubmit(recoveryForm)">
+    <p>Ingrese su cuenta de correo eletrónico</p>
+    <label for="email">Email</label><br>
+    <input type="text" placeholder="Email" ngModel name="email" required email><br>
+    <p *ngIf="error">{{error}}</p>
+    <button type="submit">Recuperar</button>
+</form>
+</div>

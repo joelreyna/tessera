@@ -1,0 +1,27 @@
+<p>Bienvenido, {{ user.displayName }}</p>
+<button (click)="onLogout()">logout</button>
+<hr>
+<div *ngIf="loading">
+    <p>Cargando</p>
+</div>
+<div *ngIf="!loading">
+    <div class="ticketsGrid">
+        <div *ngFor="let ticket of tickets">
+            <div class=ticketContainer>
+                <h2 class="total">${{ticket.total}}</h2>
+                <p><strong>Cajero:</strong> {{ticket.cajero}} <span class="derecha"><strong>ID:</strong> {{ticket.id}}</span></p>
+                <p></p>
+                <p>Productos</p>
+                <div *ngFor="let producto of ticket.productos">
+                    <p>{{producto.nombre}} <span class="derecha">${{producto.precio}}</span></p>
+                    <hr>
+                </div>
+                <p><strong>Subtotal:</strong> <span class="derecha">${{ ticket.total * 0.84 | number: '1.2-2' }}</span></p>
+                <p><strong>IVA:</strong> <span class="derecha">${{ ticket.total * 0.16  | number: '1.2-2' }}</span></p>
+                <p><strong>Total:</strong> <span class="derecha">${{ticket.total}}</span></p>
+                <!-- {{ticket.company}} -->
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="container" *ngIf="registroExitoso">
+    <h1 class="name">Ticket registrado correctamente</h1>
+    <a [routerLink]="['/user']" class="login">Regresar</a>
+</div>
+
+<div class="container" *ngIf="yaEstaRegistrado">
+    <h1 class="name">Registro fallido</h1>
+    <h1 class="subname">Ticket registrado anteriormente</h1>
+    <a [routerLink]="['/user']" class="login">Regresar</a>
+</div>
+
+<div class="container" *ngIf="noAutorizado">
+    <h1 class="name">Registro fallido</h1>
+    <h1 class="subname">Sin autorización</h1>
+    <a [routerLink]="['/user']" class="login">Regresar</a>
+</div>

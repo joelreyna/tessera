@@ -1,0 +1,56 @@
+<!-- <div class="container">
+<ngx-auth-firebaseui 
+    [providers]="[]"
+    [guestEnabled]="false"
+    [signInTabText] = "'Iniciar Sesión'"
+    [signInCardTitleText] = "'Iniciar Sesión'"
+    [loginButtonText]="'Entrar'"
+    [forgotPasswordButtonText]="'¿Olvidó su contraseña?'"
+    [nameText]="'Nombre'"
+    [nameErrorRequiredText]="'Nombre requerido'"
+    [nameErrorMinLengthText]="'El nombre es demasiado corto'"
+    [nameErrorMaxLengthText]="'El nombre es demadiado largo'"
+    [emailText]="'Email'"
+    [emailErrorRequiredText]="'Correo electrónico requerido'"
+    [emailErrorPatternText]="'Correo electrónico no válido'"
+    [passwordText]="'Contraseña'"
+    [passwordErrorRequiredText]="'Contraseña requerida'"
+    [registerTabText]="'Registro'"
+    [registerCardTitleText]="'Registro'"
+    [registerButtonText]="'Registrarse'"
+    [resetPasswordTabText]="'Restablecer la contraseña'"
+    [resetPasswordInputText]="'Restablecer la contraseña'"
+    [resetPasswordErrorRequiredText]="'Se requiere el correo electrónico'"
+    [resetPasswordErrorPatternText]="'Ingrese un correo electrónico válido'"
+    [resetPasswordActionButtonText]="'Restablecer'"
+    [resetPasswordInstructionsText]="'Se ha solicitado el restablecimiento. Revise las instrucciones en su correo electrónico.'"
+    [emailConfirmationTitle]="'¡Confirme su correo electrónico!'"
+    [emailConfirmationText]="'Se ha enviado un email a su correo. Cheque su inbox y haga click en Confirmar mi email para confirmar su correo electrónico'"
+    class="form"></ngx-auth-firebaseui>
+</div> -->
+<!-- <div class="container">
+    <div id="firebaseui-auth-container"></div>
+
+</div> -->
+
+<div class="container">
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+
+    <p>Iniciar Sesión</p>
+
+    <label for="email" class="label">Email</label> <br>
+    <!-- <p>Email</p> -->
+    <input type="text" class="input" placeholder="Email" ngModel name="email" required email> <br>
+
+    <label for="password">Contraseña</label> <br>
+    <input type="password" placeholder="Contraseña" ngModel name="password" required> <br>
+
+    <a [routerLink]="[ '/user/account-recovery' ]" *ngIf="error">¿Olvidó su contraseña?</a>
+    <p *ngIf="error">{{error}}</p>
+
+    <button type="submit" [disabled]="!loginForm.valid">Entrar</button> <br>
+
+    <a [routerLink]="[ '/register' ]">Registrarse</a>
+
+</form>
+</div>

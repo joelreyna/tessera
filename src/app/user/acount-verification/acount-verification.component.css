@@ -1,0 +1,71 @@
+.container {
+    background-color: #494949;
+    /* background-color: #ffa726; */
+    height: 100vh;
+    padding-top: 100px;
+    width: 100%;
+}
+
+p {
+    font-family: 'montserrat';
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.form {
+    /* background-color: white; */
+    background-color: #ffa726;
+    width: 30%;
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+    box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.75);
+    padding: 30px 0;
+    border-radius: 10px;
+}
+
+label {
+    float: left;
+    margin-left: 20px;
+    font-family: 'montserrat';
+}
+
+input {
+    /* text-align: center; */
+    width : 80%;
+    border: none;
+    border-bottom: 1px solid #333333;
+    padding: 5px 5px;
+    background: none;
+    margin-bottom: 20px;
+}
+
+::placeholder {
+    color:rgb(114, 110, 110);
+}
+
+button {
+    padding: 10px;
+    width: 80%;
+    font-family: 'montserrat';
+    background: #494949;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #494949;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    form {
+        width: 80%;
+    }
+}

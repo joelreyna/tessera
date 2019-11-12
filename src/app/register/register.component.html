@@ -1,0 +1,25 @@
+<div class="container">
+<form #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+        <p>Registro</p>
+
+        <label for="name">Nombre</label> <br>
+        <input type="text" placeholder="Nombre" ngModel name="name" required> <br>
+
+        <label for="lastname">Apellido</label> <br>
+        <input type="text" placeholder="Apellido" ngModel name="lastname" required> <br>
+
+        <label for="email">Email</label> <br>
+        <input type="text" placeholder="Email" ngModel name="email" required email> <br>
+    
+        <label for="password">Contraseña</label> <br>
+        <input type="password" placeholder="Contraseña" ngModel name="password" required> <br>
+    
+        <p *ngIf="error">{{error}}</p>
+    
+        <button type="submit" [disabled]="!registerForm.valid">Registrarse</button> <br>
+    
+        <a [routerLink]="[ '/login' ]">Iniciar Sesión</a>
+    
+    </form>
+</div>
